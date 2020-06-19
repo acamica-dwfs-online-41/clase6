@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.container::after {
+    content:'';
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100px;
+}
+
+.segundero, .minutero {
+    border: 1px solid red;
+    width: 80px;
+    transform-origin: 0% 100%;
+    transform: rotate(45deg) translateX(70%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.minutero {
+    border: 1px solid black;
+    transform-origin: 100% 100%;
+    transform: rotate(0deg) translateX(0%);
+    left: 0%;
+}
+
+@keyframes rotate {
+    0% {transform: rotate(45deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.clock-animation {
+    animation: rotate 10s infinite normal;
+}
